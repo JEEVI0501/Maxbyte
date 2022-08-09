@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import '../Pages/Sidebar.css';
+import './Sidebar.css';
 import { MdDashboard , MdTipsAndUpdates , MdEngineering } from "react-icons/md";
 import {NavLink} from "react-router-dom";
 import { GiAutoRepair } from "react-icons/gi";
@@ -15,7 +15,7 @@ const routes =[
     },
     {
         path:"/pm",
-        name:"Pm",
+        name:"Predictive Maintainence",
         icon:<MdTipsAndUpdates size={22}/>
     },
     {
@@ -25,7 +25,7 @@ const routes =[
     },
     {
         path:"/bm",
-        name:"Bm",
+        name:"Breakdown Maintainence",
         icon:<MdEngineering size={22}/>
     },
     {
@@ -60,7 +60,7 @@ const Sidebar = ({children}) => {
             ))}
         </section>
         </motion.div>
-       <main>{children}</main>
+       <main className="sideBar-child">{children}</main>
     </div>
   )
 }

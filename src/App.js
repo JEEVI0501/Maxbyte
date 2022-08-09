@@ -1,4 +1,5 @@
 import  Sidebar from './Components/Sidebar';
+import NavBar from './Components/navbar';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import  Bm from './Pages/bm';
 import  Pm from './Pages/pm';
@@ -11,6 +12,7 @@ function App(){
         //<Sidebar />
         <Router>
             <Sidebar>
+            <NavBar />
             <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/pm" element={<Pm />} />
