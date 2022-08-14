@@ -14,7 +14,6 @@
 }
 
 .routes {
-    margin-top: 30%;
     display: flex; 
     flex-direction: column; 
     gap: 5px;
@@ -26,7 +25,9 @@
     align-items:center;
     justify-content:space-between;
     padding:15px 5px;
+    margin-bottom: 20%;
 }
+
 .sidebar-links{
     display:flex;
     padding: 15px 30px;
@@ -35,8 +36,12 @@
     align-items: center;
     text-decoration: none;
 }
-
-
+.sidebar-lin{
+    
+        background-color: #223E7F;
+        
+        text-decoration: none;
+}
 .sidebar-links:hover{
     background-color:#223E7F;
     color:#FAFBFC;

@@ -1,7 +1,5 @@
 import { DataGrid,GridToolbar } from '@mui/x-data-grid';
 import './pm.css';
-import { palette } from '@mui/system';
-import { Box } from '@mui/system';
 
 
 const pm = () => {
@@ -30,6 +28,7 @@ const pm = () => {
     flex: 1,
     type: 'number',
     editable: false,
+    headerAlign : 'left',
   },
   {
     field: 'operatorName',
