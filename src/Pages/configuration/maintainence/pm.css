@@ -1,0 +1,60 @@
+
+
+.breadcrumb-topic{
+    margin:0% 1%;
+    color:#8A93A2;
+}
+
+.table {
+    background: #F1F4F6;
+    margin: 2% 5% 7% 7%;
+
+}
+
+.Offcanvas-form {
+    /* color:#223E7F; */
+
+}
+.AddPm{
+    align-content: right;
+}
+
+.Offcanvas-form label {
+    padding: .5rem .8rem .5rem .8rem;
+    margin: .9vw 0;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+.Offcanvas-form input {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    margin: 0 0 2vh 0;
+
+    border: 1px solid rgb(163, 163, 167);
+    border-radius: 5px;
+}
+
+.Offcanvas-form button {
+    padding: 10px;
+    width: 30%;
+
+}
+
+.submit-button {
+    text-align: center;
+}
+
+.checkbox-label {
+    display: inline-block;
+
+
+
+}
+
+.checkbox-label input {
+    vertical-align: middle;
+}

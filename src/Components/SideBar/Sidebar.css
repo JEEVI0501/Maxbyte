@@ -35,6 +35,7 @@
     gap:10px;
     align-items: center;
     text-decoration: none;
+    
 }
 .sidebar-lin{
     
@@ -48,8 +49,10 @@
     
 }
 
-.sideBar-icons{
-    padding:0px 0px 0px 22px;  
+.sidebar-links:focus {
+    background-color: #223E7F;
+    color: #FAFBFC;
+
 }
 
 .sideBar.name{
@@ -58,4 +61,29 @@
 
 .sideBar-child{
     width:100%;
+}
+
+.subMenus{
+    display: flex;
+        padding: 15px 30px;
+        color: #223E7F;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        flex-direction: column;
+}
+/* .subMenus:hover{
+    background-color: #223E7F;
+        color: #FAFBFC;
+} */
+.subMenu-items{
+    display:flex;
+    padding: 8px 10px 8px 0;
+    gap:10px;
+}
+
+.sub-menu{
+    display: flex;
+    flex-direction: column;
+    padding:0 0 0 12px;
 }

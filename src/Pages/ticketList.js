@@ -1,7 +1,9 @@
+import React, { PureComponent } from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid,  ResponsiveContainer ,Label} from 'recharts';
+import './tl.css';
+import { DataGrid,GridToolbar } from '@mui/x-data-grid';
 import { Doughnut } from 'react-chartjs-2';
 import {Chart, ArcElement,Legend,Tooltip} from 'chart.js';
-import { BarChart, Bar, XAxis, YAxis ,Label} from 'recharts';
-import './tl.css';
 Chart.register(ArcElement,Legend,Tooltip);
 const options = {
   plugins:{
@@ -19,8 +21,7 @@ const options = {
   }
   
 };
-
-const data = {
+const data2 = {
   labels: ["Inprogress", "Completed", "Rejected"],
   datasets: [
     {
@@ -32,8 +33,7 @@ const data = {
     }
   ]
 };
-
-const data2 = [
+const data = [
     {
       name: "June",
       uv: 4000,
@@ -77,26 +77,87 @@ const data2 = [
       amt: 2100
     }
   ];
-const ticketList = () => {
-  return (
-    <div>
-      
-      <div className='graph-container'>
+
+function ticketList() {
+   const columns = [
+  { 
+    field: 'id', 
+    headerName: 'Machine ID',
+   flex: 1,
+   editable: true,
+  },
+  {
+    field: 'department',
+    headerName: 'Department',
+   flex: 1,
+    editable: true,
+  },
+  {
+    field: 'description',
+    headerName: 'Description',
+    flex: 1,
+    editable: true,
+  },
+  {
+    field: 'frequency',
+    headerName: 'Frequency',
+    flex: 1,
+    type: 'number',
+    editable: false,
+    headerAlign : 'left',
+  },
+  {
+    field: 'operatorName',
+    headerName: 'Operator Name',
+    flex: 1,
+    editable: true,
+   },
+   {
+    field: 'completed',
+    headerName: 'Completed',
+    flex: 1,
+    editable: true,
+   },
+   {
+    field: 'toticket',
+    headerName: 'To Ticket',
+    flex: 1,
+    editable: true,
+   },
+];
+
+const rows = [
+  { id: 1, },
+  { id: 2, },
+  { id: 3, },
+  { id: 4, },
+  { id: 5, },
+  { id: 6, },
+  { id: 7, },
+  { id: 8, },
+  { id: 9, },
+]
+    return (
+      <div className='tl-main'>
+        <div className='graph-container'>
+          <div className='child-donut'>
+          <div className='doughnut-graph-label-container'>
+          Ticket Count
+        </div>
+        <div className='donut-container'>
+        <Doughnut data={data2} options={options} />
+        </div>
+        
+        </div>
+        <div className='child-bar'>
         <div className='doughnut-graph-label-container'>
           Ticket Count
         </div>
-      
-        <Doughnut data={data} options={options} />
-      </div>
-      
-      <div className='graph-container'>
-        <div className='barchart-graph-label-container'>
-            Ticket Count
-        </div>
+        <div className='bar-container'>
         <BarChart
           width={500}
           height={300}
-          data={data2}
+          data={data}
           margin={{
             top: 5,
             right: 30,
@@ -104,6 +165,7 @@ const ticketList = () => {
             bottom: 65,
           }}
         >
+
           
           <XAxis dataKey="name" ><Label value='Month'  position='Bottom' offset={55}/></XAxis>
           <YAxis ><Label value='Ticket count' angle={-90} position='insideBottomLeft'/></YAxis>
@@ -113,9 +175,48 @@ const ticketList = () => {
           {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
         </BarChart>
         </div>
+        </div>
         
+      </div>
+      <div>
+     <div className="pm-bc">
+      <div style={{ height: 500, width: '95%' }} className="tl-table">
+      <div style={{ display: 'flex', height: '100%' }}>
+        <div style={{ flexGrow: 1 }}>
+     
+      <DataGrid  sx={{
+   
+    
+    '& .MuiDataGrid-cell:hover': {
+      color: 'primary.main',
+    },
+    bgcolor:'text.light',
+  }}
+        columnResizingAnimationMode="Interpolate"
+        columnResizingMode="Deferred"
+        disableColumnMenu
+        rows={rows}
+        columns={columns}
+        checkboxSelection
+        disableSelectionOnClick
+        disableColumnFilter
+        pagination
+        disableDensitySelector
+        
+        components={{ Toolbar: GridToolbar }}
+        componentsProps={{
+
+          toolbar: {
+            showQuickFilter: true,
+            quickFilterProps: { debounceMs: 500 },
+          },
+        }}
+      />
+   
+    </div></div>
+    </div></div></div>
     </div>
-  )
-}
+    );
+  }
 
 export default ticketList;

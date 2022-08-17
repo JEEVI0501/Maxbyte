@@ -7,10 +7,12 @@ import { GiAutoRepair } from "react-icons/gi";
 import { RiTicket2Line } from "react-icons/ri";
 import { MdMenu } from "react-icons/md";
 import { GiGears } from "react-icons/gi";
-import Logo from "../assets/Logo.jpeg";
+import Logo from "C:/Users/HP/Desktop/maxbytes/src/assets/Logo.jpeg";
 import {useState} from 'react';
 import { AiOutlineAudit } from "react-icons/ai";
 import { GrVmMaintenance } from "react-icons/gr";
+import SidebarMenu from "./SidebarMenu";
+
 const routes =[
     {
         path:"/",
@@ -41,7 +43,8 @@ const routes =[
         path:"/config",
         name:"Configuration",
         icon:<GiGears size={22}/>,
-        subNav : [
+        exact:true,
+        subRoutes : [
             {
                 path:"/config/audit",
                 name:"Audit",
@@ -50,7 +53,7 @@ const routes =[
             {
                 path:"/config/maintainence",
                 name:"Maintainence",
-                icon :<GrVmMaintenance size={22} />
+                icon :<GrVmMaintenance size={22} style={{color:"#223E7F"}}/>
             },
             
         ],
@@ -58,45 +61,45 @@ const routes =[
     
 ];
 
-const SubNavigation =(props)=>{
+// const SubNavigation =(props)=>{
         
-    const routes = props.items;
-    console.log(routes)
-    // return (
-    //     <>
+//     const routes = props.items;
+//     console.log(routes)
+//     // return (
+//     //     <>
         
-    //     <ul>
+//     //     <ul>
             
-    //     {routes.map((routes,index)=>{
+//     //     {routes.map((routes,index)=>{
             
-    //         return (
-    //             <NavLink to={routes.path} key={routes.name} className = "sidebar-links">
+//     //         return (
+//     //             <NavLink to={routes.path} key={routes.name} className = "sidebar-links">
                     
-    //                         {/* <div className = "sideBar.icons">{routes.icon}</div> */}
-    //                         <div className = "sideBar.name">{routes.name}</div>
-    //             </NavLink>
+//     //                         {/* <div className = "sideBar.icons">{routes.icon}</div> */}
+//     //                         <div className = "sideBar.name">{routes.name}</div>
+//     //             </NavLink>
                 
-    //         )
-    //     }
-    //     )}
-    //     </ul></>
-    //)
-    if(!routes) return null;
-    return (
-    <ul>
-      {routes.map((item, index) => {
-        return(
-             <NavLink to={item.path} key={index} className = "sidebar-links">
-                <div className = "sideBar.icons">{item.icon}</div>
-                    {
-                        <div className = "sideBar.name">{item.name}</div>
-                    }
-            </NavLink>
-        )
-      })}
-    </ul>
-  );
-}
+//     //         )
+//     //     }
+//     //     )}
+//     //     </ul></>
+//     //)
+//     if(!routes) return null;
+//     return (
+//     <ul>
+//       {routes.map((item, index) => {
+//         return(
+//              <NavLink to={item.path} key={index} className = "sidebar-links">
+//                 <div className = "sideBar.icons">{item.icon}</div>
+//                     {
+//                         <div className = "sideBar.name">{item.name}</div>
+//                     }
+//             </NavLink>
+//         )
+//       })}
+//     </ul>
+//   );
+// }
 
 
 const Sidebar = ({children}) => {
@@ -104,8 +107,7 @@ const Sidebar = ({children}) => {
     const[show,setShow] = useState(false);
     const toggle =() => setShow(!show);
 
-    const[showSubMenu,setShowSubMenu] =useState(false);
-    const clicked =() => setShowSubMenu(!showSubMenu);
+    
 
     
 
@@ -121,18 +123,27 @@ const Sidebar = ({children}) => {
         <div className ="sideBar-icons">
             <MdMenu size={25} onClick={toggle} />
         </div></div>
-            {routes.map((route,index)=>(
-                <NavLink to={route.path} key={route.name} className = "sidebar-links"  onClick={clicked}>
+        <section className="sidebar-menu">
+          
+            {routes.map((route,index)=>{
+                if(route.subRoutes){
+                    return(
+                     <SidebarMenu show={show} route={route} key={route.name} setShow={setShow}/>
+                    )
+                }
+                return(
+                <NavLink to={route.path} key={index} className = "sidebar-links">
                   
                     <div className = "sideBar.icons">{route.icon}</div>
                     {
                         show && <div className = "sideBar.name">{route.name}</div>
                      
                     }
-                    {showSubMenu && <div><SubNavigation items ={route.subNav} /></div>}
+                    {/* {showSubMenu && <div><SubNavigation items ={route.subNav} /></div>} */}
                     
                 </NavLink>
-            ))}
+            )})}
+        </section>
         </motion.div>
        <main className="sideBar-child">{children}</main>
     </div>
