@@ -3,7 +3,7 @@ import './Sidebar.css';
 import { MdDashboard , MdTipsAndUpdates , MdEngineering } from "react-icons/md";
 import {NavLink} from "react-router-dom";
 import {Link} from "react-router-dom";
-import { GiAutoRepair } from "react-icons/gi";
+import { GiAutoRepair} from "react-icons/gi";
 import { RiTicket2Line } from "react-icons/ri";
 import { MdMenu } from "react-icons/md";
 import { GiGears } from "react-icons/gi";
@@ -29,16 +29,7 @@ const routes =[
     //     name:"Clirt",
     //     icon:<GiAutoRepair size={22}/>
     // },
-    {
-        path:"/abnormality",
-        name:"Abnormality",
-        icon:<MdEngineering size={22}/>
-    },
-    {
-        path:"/ticketList",
-        name:"TicketList",
-        icon:<RiTicket2Line size={22}/>
-    },
+    
     {
         path:"/config",
         name:"Configuration",
@@ -53,10 +44,20 @@ const routes =[
             {
                 path:"/config/maintainence",
                 name:"Maintainence",
-                icon :<GrVmMaintenance size={22} style={{color:"#223E7F"}}/>
+                icon:<GiAutoRepair size={22}/>
             },
             
         ],
+    },
+    {
+        path:"/abnormality",
+        name:"Abnormality",
+        icon:<MdEngineering size={22}/>
+    },
+    {
+        path:"/ticketList",
+        name:"TicketList",
+        icon:<RiTicket2Line size={22}/>
     },
     
 ];

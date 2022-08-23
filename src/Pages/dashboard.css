@@ -4,3 +4,93 @@
         place-items: center;
     
 }
+.dashBoard-cards{
+    float:left;
+    margin:4px;
+    /* padding:4px; */
+    background-color: #ECE9E6;
+    background-image: linear-gradient(to bottom right, #ECE9E6, #FFFFFF);
+    border-radius: 6px;
+}
+
+.dashBoard-wholeCard{
+    margin:4px 7px;
+}
+.dashBoard-cardHeader{
+    font-size:20px;
+    color :#223E7F ;
+    font-weight: bold;
+}
+
+.dashBoard-cardtext{
+    font-size:40px;
+    color:#70BB43;
+    font-weight: bolder;
+}
+.dashboard-main {
+    overflow: auto;
+    height: 85%;
+    
+}
+
+.dashBoardgraph-container {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    float:left;
+    border-radius: 10px;
+    margin: 40px;
+    width: fit-content;
+    text-align: center;
+    display: flex;
+    column-gap: 100px;
+    height: 500px;
+    padding: 40px;
+
+}
+
+.dashBoardgraph-label-container {
+    padding: 20px;
+    margin: 10px;
+    color: rgb(163, 163, 167);
+    font-size: larger;
+    font-weight: 600;
+}
+
+.doughnut-graph-label-container {
+
+    padding: 20px;
+    margin: 10px;
+    color: #8A93A2;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.dashBoardchild-donut {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    flex-grow: 1;
+    vertical-align: middle;
+    padding: 10px;
+    height: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    gap: 8px;
+    border-radius: 10px;
+}
+
+.dashBoardchild-bar {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    flex-grow: 1;
+    vertical-align: middle;
+    padding: 10px;
+    height: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    gap: 8px;
+    border-radius: 10px;
+}
+
+.dashBoarddonut-container {
+    margin-left: 20px;
+    margin-right: 20px;
+}
