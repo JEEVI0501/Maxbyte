@@ -81,58 +81,46 @@ const data = [
     }
   ];
   return (
-    <div  className='dashBoard-main'>
+    <div className='dashBoard-main'>
       <div className="dashBoard-wholeCard">
-      <Card style={{width: '13rem', height:'8rem'}} className="dashBoard-cards">
+      <Card style={{width: '16%', height:'12%'}} className="dashBoard-cards">
         <Card.Body>
           <Card.Text className="dashBoard-cardHeader">Total Tickets</Card.Text>
           <Card.Title className="dashBoard-cardtext">23</Card.Title>
         </Card.Body>
       </Card>
-      <Card style={{width: '13rem', height:'8rem'}} className="dashBoard-cards">
+      <Card style={{width: '16%', height:'12%'}} className="dashBoard-cards">
         <Card.Body>
-         <Card.Text className="dashBoard-cardHeader">Total Tickets</Card.Text>
-          <Card.Title className="dashBoard-cardtext">23</Card.Title>
+         <Card.Text className="dashBoard-cardHeader">Resolve</Card.Text>
+          <Card.Title className="dashBoard-cardtext">41</Card.Title>
         </Card.Body>
       </Card>
-      <Card style={{width: '13rem', height:'8rem'}} className="dashBoard-cards">
+      <Card style={{width: '16%', height:'12%'}} className="dashBoard-cards">
         <Card.Body>
-          <Card.Text className="dashBoard-cardHeader">Total Tickets</Card.Text>
-          <Card.Title className="dashBoard-cardtext">23</Card.Title>
+          <Card.Text className="dashBoard-cardHeader">Completed</Card.Text>
+          <Card.Title className="dashBoard-cardtext">9</Card.Title>
         </Card.Body>
       </Card>
-      <Card style={{width: '13rem', height:'8rem'}} className="dashBoard-cards">
+      <Card style={{width: '16%', height:'12%'}} className="dashBoard-cards">
         <Card.Body>
-          <Card.Text className="dashBoard-cardHeader">Total Tickets</Card.Text>
-          <Card.Title className="dashBoard-cardtext">23</Card.Title>
+          <Card.Text className="dashBoard-cardHeader">Create Request</Card.Text>
+          <Card.Title className="dashBoard-cardtext">10</Card.Title>
         </Card.Body>
       </Card>
-      <Card style={{width: '13rem', height:'8rem'}} className="dashBoard-cards">
+      <Card style={{width: '16%', height:'12%'}} className="dashBoard-cards">
         <Card.Body>
-          <Card.Text className="dashBoard-cardHeader">Total Tickets</Card.Text>
-          <Card.Title className="dashBoard-cardtext">23</Card.Title>
+          <Card.Text className="dashBoard-cardHeader">Check and Assign</Card.Text>
+          <Card.Title className="dashBoard-cardtext">15</Card.Title>
         </Card.Body>
       </Card>
-      <Card style={{width: '13rem', height:'8rem'}} className="dashBoard-cards">
+      <Card style={{width: '16%', height:'12%'}} className="dashBoard-cards">
         <Card.Body>
-          <Card.Text className="dashBoard-cardHeader">Total Tickets</Card.Text>
-          <Card.Title className="dashBoard-cardtext">23</Card.Title>
+          <Card.Text className="dashBoard-cardHeader">Rejected</Card.Text>
+          <Card.Title className="dashBoard-cardtext">1</Card.Title>
         </Card.Body>
       </Card>
       </div>
-        <div>
-        <div className='dashBoardgraph-container'>
-          <div className='dashBoardchild-donut'>
-          <div className='doughnut-graph-label-container'>
-          Aging Of Ticket
-        </div>
-        <div className='dashBoarddonut-container'>
-        <Doughnut data={data2} options={options} />
-        </div>
-        
-        </div>
-        </div>
-      <div>
+        <div><div>
 
         <div className='dashBoardgraph-container'>
           <div className='dashBoardchild-donut'>
@@ -146,10 +134,26 @@ const data = [
         </div>
         </div>
       </div>
-    </div>
-    <div>
-      <div className='bar-container'>
-        <div>
+        <div className='dashBoardgraph-container'>
+          <div className='dashBoardchild-donut'>
+          <div className='doughnut-graph-label-container'>
+          Aging Of Ticket
+        </div>
+        <div className='dashBoarddonut-container'>
+        <Doughnut data={data2} options={options} />
+        </div>
+        
+        </div>
+        </div>
+      </div>
+    
+    <div style={{float:"left"}}>
+      
+    <div className='dashBoard-child-bar'>
+        <div className='dashboard-doughnut-graph-label-container'>
+          Ticket Count
+        </div>
+    <div className='bar-container'>
         <BarChart
           width={500}
           height={300}
@@ -171,34 +175,11 @@ const data = [
           {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
         </BarChart>
         </div>
-        <div>
-        <div className='bar-container'>
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 65,
-          }}
-        >
-
-          
-          <XAxis dataKey="name" ><Label value='Month'  position='Bottom' offset={55}/></XAxis>
-          <YAxis ><Label value='Ticket count' angle={-90} position='insideBottomLeft'/></YAxis>
-          <Tooltip />
-          
-          <Bar dataKey="Count" fill="#223E7F"  barSize={5}/>
-          {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-        </BarChart>
         </div>
-    </div>
-    </div>
-    </div>
+      </div>
 </div>
+
   )
 }
 
-export default dashboard
+export default dashboard;
