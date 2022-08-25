@@ -185,13 +185,39 @@ const rows=[...storeData,NewRow]
            </form> 
          </Offcanvas.Body>
        </Offcanvas>
-       <div><Button style={{backgroundColor:"white",boxShadow:"white"}} variant="primary" onClick={handleShow}>
-      
+       <div className='datagrid-panel'>
+            <div className='datagrid-panel-child'>
+              <Button style={{backgroundColor:"white",boxShadow:"white"}} variant="primary" onClick={handleShow}>
             
-            <MdAddCircleOutline style={{ color: "black", width: "20px", height: "20px" }} className="AddPm"/>
+                  
+                  <MdAddCircleOutline style={{ color: "black", width: "20px", height: "20px" }} className="AddPm"/>
+                  
+              </Button>
+            </div>
+
+            <div className='datagrid-panel-child'>
+              <form >
+              <select className='panel-select'>
+                  <option value="heavy">Heavy equipment</option>
+                  <option value="indoor">Indoor equipment</option>
+                  <option selected value="hv">Highly vulnerable</option>
+                  <option value="lv">Least vulnerable</option>
+              </select>
+              </form>
+            </div>
+
+            <div className='datagrid-panel-child'>
+              <form >
+              <select className='panel-select'>
+                  <option value="completed">completed</option>
+                  <option value="tobechecked">To be checked</option>
+                  <option selected value="an">Needed attention</option>
+                  <option value="ignore">Ignored</option>
+              </select>
+              </form>
+            </div>
             
-             </Button></div>
-       
+        </div>
       <DataGrid  sx={{
    
     

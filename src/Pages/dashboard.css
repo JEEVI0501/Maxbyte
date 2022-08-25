@@ -51,20 +51,25 @@
 .dashBoardgraph-label-container {
     padding: 20px;
     margin: 10px;
-    color: rgb(163, 163, 167);
+    color: rgb(255, 255, 255);
     font-size: larger;
     font-weight: 600;
 }
-
+.dashBoard-doughnut{
+    margin:0 10%;
+}
 .dashboard-doughnut-graph-label-container {
 
     padding: 20px;
     margin: 10px;
-    color: #8A93A2;
+    color: #b7b5c3;
     font-size: larger;
     font-weight: 600;
 }
-
+.barGraph-main{
+    margin:0 0 9% 9%;
+    float:left;
+}
 .dashBoardchild-donut {
     display: flex;
     align-items: stretch;

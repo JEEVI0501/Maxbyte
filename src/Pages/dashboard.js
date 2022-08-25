@@ -31,7 +31,24 @@ const data2 = {
       backgroundColor: [
         "#FF6384",
         "#36A2EB", 
-        "#FFCE56"]
+        "#FFCE56",
+       
+      ]
+    }
+  ]
+};
+
+const data3 = {
+  labels: ["Resolve", "Completed", "Create Request","Check and Assign","Rejected"],
+  datasets: [
+    {
+      data: [41, 9, 10,15,1],
+      backgroundColor: [
+        "#FFB156",
+        "#36A2EB", 
+        "#FF6384",
+       "#70BB43",
+        "#F54040"]
     }
   ]
 };
@@ -120,7 +137,7 @@ const data = [
         </Card.Body>
       </Card>
       </div>
-        <div><div>
+        <div className='dashBoard-doughnut'><div>
 
         <div className='dashBoardgraph-container'>
           <div className='dashBoardchild-donut'>
@@ -137,19 +154,19 @@ const data = [
         <div className='dashBoardgraph-container'>
           <div className='dashBoardchild-donut'>
           <div className='doughnut-graph-label-container'>
-          Aging Of Ticket
+          Tickets
         </div>
         <div className='dashBoarddonut-container'>
-        <Doughnut data={data2} options={options} />
+        <Doughnut data={data3} options={options} />
         </div>
         
         </div>
         </div>
       </div>
     
-    <div style={{float:"left"}}>
-      
-    <div className='dashBoard-child-bar'>
+    <div>
+    <div className='barGraph-main'>
+    <div className='child-bar'>
         <div className='dashboard-doughnut-graph-label-container'>
           Ticket Count
         </div>
@@ -176,8 +193,39 @@ const data = [
         </BarChart>
         </div>
         </div>
+        
       </div>
-</div>
+      <div className='barGraph-main'>
+    <div className='child-bar'>
+        <div className='dashboard-doughnut-graph-label-container'>
+          Repeated Abnormality
+        </div>
+    <div className='bar-container'>
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 65,
+          }}
+        >
+
+          
+          <XAxis dataKey="name" ><Label value='Month'  position='Bottom' offset={55}/></XAxis>
+          <YAxis ><Label value='Ticket count' angle={-90} position='insideBottomLeft'/></YAxis>
+          <Tooltip />
+          
+          <Bar dataKey="Count" fill="#223E7F"  barSize={5}/>
+          {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
+        </BarChart>
+        </div>
+        </div>
+        
+      </div>
+</div></div>
 
   )
 }
