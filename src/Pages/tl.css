@@ -1,42 +1,10 @@
-.dashboard-title{
-    font-size: 3rem;
-    display: grid;
-    place-items: center;
+.tl-main{
+    overflow:auto;
+    height:85%;
 }
-
-.dashBoard-cards{
-    float:left;
-    margin:4px;
-    /* padding:4px; */
-    background-color: #ECE9E6;
-    background-image: linear-gradient(to bottom right, #ECE9E6, #FFFFFF);
-    border-radius: 6px;
-}
-
-.dashBoard-wholeCard{
-    margin:4px 7px;
-  
-}
-.dashBoard-cardHeader{
-    font-size:20px;
-    color :#223E7F ;
-    font-weight: bold;
-}
-
-.dashBoard-cardtext{
-    font-size:40px;
-    color:#70BB43;
-    font-weight: bolder;
-}
-.dashBoard-main {
-    overflow: auto;
-    height: 85%;
-
-}
-
-.dashBoardgraph-container {
+.graph-container {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    float:left;
+    
     border-radius: 10px;
     margin: 40px;
     width: fit-content;
@@ -48,29 +16,29 @@
 
 }
 
-.dashBoardgraph-label-container {
+.tl-table {
+    background: #F1F4F6;
+    margin: 2% 0% 5% 2%;
+}
+
+.graph-label-container {
     padding: 20px;
     margin: 10px;
-    color: rgb(255, 255, 255);
+    color: rgb(163, 163, 167);
     font-size: larger;
     font-weight: 600;
 }
-.dashBoard-doughnut{
-    margin:0 10%;
-}
-.dashboard-doughnut-graph-label-container {
+
+.doughnut-graph-label-container {
 
     padding: 20px;
     margin: 10px;
-    color: #b7b5c3;
+    color: #8A93A2;
     font-size: larger;
     font-weight: 600;
 }
-.barGraph-main{
-    margin:0 0 9% 9%;
-    float:left;
-}
-.dashBoardchild-donut {
+
+.child-donut {
     display: flex;
     align-items: stretch;
     flex-direction: column;
@@ -83,7 +51,7 @@
     border-radius: 10px;
 }
 
-.dashboard-child-bar {
+.child-bar {
     display: flex;
     align-items: stretch;
     flex-direction: column;
@@ -96,7 +64,7 @@
     border-radius: 10px;
 }
 
-.dashBoarddonut-container {
+.donut-container {
     margin-left: 20px;
     margin-right: 20px;
 }

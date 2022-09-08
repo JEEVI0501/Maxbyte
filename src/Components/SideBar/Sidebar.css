@@ -1,0 +1,89 @@
+
+.sideBar-motion{
+    background:#FAFBFC;
+    color:#223E7F;
+    height:100%;
+}
+
+.sideBar-main{
+    display:flex;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color: #F1F4F6;
+}
+
+.routes {
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px;
+    text-decoration: none;
+}
+
+.maxbyte-logo {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 5px;
+    margin-bottom: 20%;
+}
+
+.sidebar-links{
+    display:flex;
+    padding: 15px 30px;
+    color:#223E7F;
+    gap:10px;
+    align-items: center;
+    text-decoration: none;
+    
+}
+.sidebar-lin{
+    
+        background-color: #223E7F;
+        
+        text-decoration: none;
+}
+.sidebar-links:hover{
+    background-color:#223E7F;
+    color:#FAFBFC;
+    
+}
+
+.sidebar-links:focus {
+    background-color: #223E7F;
+    color: #FAFBFC;
+
+}
+
+.sideBar.name{
+    text-decoration: none;
+}
+
+.sideBar-child{
+    width:100%;
+}
+
+.subMenus{
+    display: flex;
+        padding: 15px 30px;
+        color: #223E7F;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+        flex-direction: column;
+}
+/* .subMenus:hover{
+    background-color: #223E7F;
+        color: #FAFBFC;
+} */
+.subMenu-items{
+    display:flex;
+    padding: 8px 10px 8px 0;
+    gap:10px;
+}
+
+.sub-menu{
+    display: flex;
+    flex-direction: column;
+    padding:0 0 0 12px;
+}
